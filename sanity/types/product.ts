@@ -8,6 +8,7 @@ export interface Product {
   _id: string;
   name: string;
   brand: string;
+  isFeatured: boolean;
   description: Array<{ children: Array<{ text: string }> }>; // Assuming description is rich text
   image: ProductImage | null;
   price: number;

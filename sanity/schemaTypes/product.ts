@@ -10,44 +10,26 @@ export const productType = defineType({
       type: "string",
       validation: (rule) => rule.required(),
     }),
+
     defineField({
       name: "brand",
       type: "string",
       validation: (rule) => rule.required(),
     }),
+
     defineField({
       name: "description",
       type: "array",
       of: [{ type: "block" }],
     }),
+
     defineField({
       name: "image",
       type: "image",
     }),
+
     defineField({
       name: "price",
-      type: "number",
-      validation: (rule) => rule.required(),
-    }),
-
-    defineField({
-      name: "quantityType",
-      type: "string",
-      validation: (rule) => rule.required(),
-      options: {
-        list: [
-          { title: "Litres", value: "litres" },
-          { title: "Millilitres", value: "millilitres" },
-          { title: "Kilograms", value: "kilograms" },
-          { title: "Grams", value: "grams" },
-          { title: "Numbers", value: "numbers" },
-          { title: "Dozens", value: "dozens" },
-        ],
-      },
-    }),
-
-    defineField({
-      name: "quantityUnit",
       type: "number",
       validation: (rule) => rule.required(),
     }),
@@ -72,17 +54,23 @@ export const productType = defineType({
     }),
 
     defineField({
-      name: "category",
+      name: "isFeatured",
+      type: "boolean",
+      initialValue: false,
+    }),
+
+    defineField({
+      name: "polishLevel",
       type: "string",
       validation: (rule) => rule.required(),
       options: {
         list: [
-          { title: "Laundry", value: "laundry" },
-          { title: "Spices", value: "spices" },
-          { title: "Cleaning", value: "cleaning" },
-          { title: "Dairy", value: "dairy" },
+          { title: "Low", value: "low" },
+          { title: "Medium", value: "medium" },
+          { title: "High", value: "high" },
         ],
       },
+      initialValue: "high",
     }),
   ],
 });

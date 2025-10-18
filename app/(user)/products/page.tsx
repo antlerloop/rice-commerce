@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import { productQuery } from "@/sanity/lib/queries";
 import { Product } from "@/sanity/types/product";
-import Image from "next/image";
+import { ProductCard } from "@/components/ProductCard";
 
 const fetchProducts = async () => {
   const res = await client.fetch<Product[]>(productQuery);
@@ -40,30 +40,9 @@ export default function Home() {
   return (
     <div className="max-w-5xl mx-auto p-4">
       <h1 className="my-4 text-2xl md:text-3xl">Products</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {products.map((product) => (
-          <div
-            key={product._id}
-            className="border border-gray-400 p-4 rounded relative"
-          >
-            {product.discount ? (
-              <div className="absolute right-0 top-0 px-4 py-2 bg-green-600 text-white">
-                {product.discountType === "amount" ? "Rs." : ""}
-                {product.discount}
-                {product.discountType === "percentage" ? "%" : ""} off
-              </div>
-            ) : null}
-            <h2>{product.name}</h2>
-            {/* Assuming description is rich text */}
-            <Image
-              src={product.image?.asset?.url ?? ""}
-              alt={product.name}
-              width={400}
-              height={400}
-            />
-            <p>Price: ${product.price}</p>
-            {/* <p>Category: {product.category}</p> */}
-          </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {products.map((product, index) => (
+          <ProductCard product={product} index={index} key={product._id} />
         ))}
       </div>
     </div>

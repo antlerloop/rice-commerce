@@ -16,6 +16,7 @@ export const productQuery = `
     quantityUnit,
     discount,
     discountType,
-    category
+    category,
+    isFeatured
   }
 `;

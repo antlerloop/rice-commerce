@@ -14,23 +14,29 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Landing Page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Hero
+- Popular Rice types
+- Popular Brands
+- Discounts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Bulk Order
 
-## Learn More
+## Products
 
-To learn more about Next.js, take a look at the following resources:
+- Products List Page
+- Filter
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - by name
+  - by category
+  - by polish type
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- product detail
 
-## Deploy on Vercel
+## About Us
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Owner name
+Shop location(Map)
+Phone
+WhatsApp
